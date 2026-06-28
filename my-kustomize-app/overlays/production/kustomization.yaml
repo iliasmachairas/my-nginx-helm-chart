@@ -1,0 +1,15 @@
+resources:
+  - ../../base
+
+patches:
+  - patch: |-
+      - op: replace
+        path: /spec/replicas
+        value: 10
+    target:
+      kind: Deployment
+      name: my-app
+
+images:
+  - name: nginx
+    newTag: "1.27"
